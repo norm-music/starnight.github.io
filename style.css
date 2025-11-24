@@ -261,6 +261,55 @@ span{
     }
 }
 
+.about_me{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    padding: 3rem 1.5rem;
+    width: 100%;
+}
+
+.about_me h1{
+    font-size: 4.8rem;
+    margin: 0 0 1.2rem 0;
+    color: #e6f0ff;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.about_me .about-card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid rgba(3,76,202,0.08);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 1000px;
+    width: 90%;
+    box-shadow: 0 12px 40px rgba(3,76,202,0.09);
+}
+
+.about_me pre{
+    white-space: pre-wrap; /* 保留換行但允許換行斷行 */
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.9;
+    color: #dfefff;
+    margin: 0;
+}
+
+/* smaller devices */
+@media(max-width: 768px){
+    .about_me h1{ font-size: 3.2rem; }
+    .about_me .about-card{ padding: 1.4rem; }
+    .about_me pre{ font-size: 1.4rem; line-height: 1.7; }
+}
+
+@media(max-width: 480px){
+    .about_me h1{ font-size: 2.2rem; }
+    .about_me .about-card{ width: 96%; padding: 1rem; }
+    .about_me pre{ font-size: 1.2rem; }
+}
+
 .svg {
     margin-top: 80px;
     margin-left: 10px;
