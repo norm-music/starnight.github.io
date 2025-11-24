@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device=width,initial-scale=1.0,maximum-scale=1.0;user-scalable=0;">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>我的介紹</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"class="logo">Norm</a>
+
+            <nav>
+                <a href="index.html"class="active">首頁</a>
+                <a href="works.html">作品</a>
+                <a href="interest.html">興趣</a>
+                <a href="service.html">諮詢</a>
+                <a href="information.html">基本資料</a>
+            </nav>
+        </header>
+       <section>
+        <div class="myworks">
+            <br><br><br><br>
+            <h1>以下是我的一些音樂作品</h1>
+        </div>
+        <svg height="100" width="3000" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="100" x2="1300" y2="100" style="stroke:white;stroke-width:3" />
+        </svg>
+
+        <div class="melancholy">
+            <h1>憂鬱(Melancholy)</h1>
+            <div class="video-frame">
+                <video class="melancholy-video" src="Melancholy.mp4" controls alt="melancholy.mp4"></video>
+            </div>
+        </div>
+        <div class="trip">
+            <h1>旅行(Adventure)</h1>
+            <div class="trip-audio">
+                <audio controls src="trip.mp3" type="audio/mpeg"></audio>
+            </div>
+        </div>
+        <div class="music-works-section">
+            <button type="button" class="music-btn" onclick="loadDoc()">看更多作品</button>
+            <div class="table-container">
+                <table id="demo"></table>
+            </div>
+        </div>
+        <script>
+            const musicWorks = [
+                { 名稱: "不甘情願(reluctant)", 創作時間: "2023年3月", 類型: "日本流行音樂(J-pop)", 風格: "憂鬱" },
+                { 名稱: "沉浸(immersion)", 創作時間: "2022年12月", 類型: "電子音樂", 風格: "活潑" },
+                { 名稱: "感知(awareness)", 創作時間: "2024年3月", 類型: "搖滾", 風格: "憂鬱" },
+                { 名稱: "懶惰(laziness)", 創作時間: "2022年4月", 類型: "電子", 風格: "夢幻" },
+                { 名稱: "旅行(adventure)", 創作時間: "2022年9月", 類型: "讀書用", 風格: "憂鬱" }
+            ];
+
+            function loadDoc() {
+                myFunction();
+            }
+            function myFunction() {
+                let table = "<tr><th>曲名</th><th>創作時間</th><th>類型</th><th>風格</th></tr>";
+                
+                for (let i = 0; i < musicWorks.length; i++) { 
+                    const work = musicWorks[i];
+                    table += "<tr><td>" + work.名稱 + "</td><td>" + work.創作時間 + "</td><td>" + work.類型 + "</td><td>" + work.風格 + "</td></tr>";
+                }
+                
+                document.getElementById("demo").innerHTML = table;
+            }
+        </script>
+        <p class="listen-wrap">
+            <a class="listen-btn" href="https://soundcloud.com/norm_music" target="_blank" rel="noopener noreferrer" aria-label="前往聆聽我的 SoundCloud">
+                <i class="fa-brands fa-soundcloud"></i>
+                <span>前往聆聽</span>
+            </a>
+        </p>
+       </section>
+    </body>
+</html>
