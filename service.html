@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device=width,initial-scale=1.0,maximum-scale=1.0;user-scalable=0;">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>我的介紹</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"class="logo">Norm</a>
+
+            <nav>
+                <a href="index.html"class="active">首頁</a>
+                <a href="works.html">作品</a>
+                <a href="interest.html">興趣</a>
+                <a href="service.html">諮詢</a>
+                <a href="information.html">基本資料</a>
+            </nav>
+        </header>
+       <section class="service-section">
+        <h1>如有任何問題或合作意願，歡迎留下資料</h1>
+        <svg height="50" width="300" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="40" x2="250" y2="40" style="stroke:white;stroke-width:12" />
+        </svg>
+
+        <div class="form-wrapper">
+            <form class="contact-form" action="#" method="post" novalidate>
+                <div class="form-row">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name" placeholder="請輸入姓名" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="telephone">手機電話</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="09xx-xxx-xxx" pattern="[0-9\-\s]+" required>
+                </div>
+
+                <div class="form-row two-col">
+                    <div>
+                        <label for="lineID">Line ID</label>
+                        <input type="text" id="lineID" name="lineID" placeholder="Line ID">
+                    </div>
+                    <div>
+                        <label for="instagram">Instagram</label>
+                        <input type="text" id="instagram" name="instagram" placeholder="Instagram 帳號">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="message">想對我說的話</label>
+                    <textarea id="message" name="message" rows="5" placeholder="可輸入合作需求或留言"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn submit-btn">送出</button>
+                    <button type="reset" class="btn secondary-btn" aria-label="重設表單">重設</button>
+                </div>
+            </form>
+        </div>
+       </section>
+    </body>
+</html>
