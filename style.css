@@ -1,0 +1,1007 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family:'Poppins', sans-serif;
+
+}
+
+html{
+    font-size: 62.5%;
+}
+
+:root{
+    --header-height: 8rem;
+    --header-overlap: 3rem; /* 被 header 遮蓋的高度，可調 */
+}
+
+body{
+    width: 100%;
+    height: 200vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    padding-top: calc(var(--header-height) - var(--header-overlap));
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    padding: 1rem 9%;
+    background-color:	#3A006F;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #034CCA;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo hover{
+    transform:scale(1.1);
+}
+
+nav a{
+    font-size:1.8rem;
+    color: white;
+    margin-left:4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a:active{
+    color: #034CCA;
+    border-bottom: 3px solid #034CCA;
+}
+
+@media(max-width: 995px) {
+    nav{
+        position: absolute;
+        display: 20%;
+        top:0;
+        right: 0;
+        width:40%;
+        border-left:3px solid #034CCA;
+        border-bottom: 3px solid #034CCA;
+        padding: 1rem solid;
+        background-color:	#0f45ea;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+}
+
+nav.active{
+    display: block;
+}
+
+nav.a{
+    display: block;
+    font-size:2rem;
+    margin:3rem 0;
+}
+
+nav a:hover,
+nav a.active{
+    padding:  1rem;
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem;
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:8rem;
+    background-color: black;
+}
+
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color:#034CCA;
+}
+.home-content p{
+    font-size: 2rem;
+}
+
+.home-content h3{
+    font-size:4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home img{
+    border-radius:50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius:50%;
+    box-shadow: 0 0 25px solid #034CCA;
+    cursor:pointer;
+    transition: 0.2s linear;
+}
+
+.social-icons a{
+    display:inline-flex;
+    justify-content:center ;
+    align-items:center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #034CCA;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition:0.3s ease;
+}
+
+.social-icons a:hover{
+    color:black;
+    transform:scale(1.3)translateY(-5px);
+    background-color: #034CCA;
+    box-shadow: 0 0 25px #034CCA;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: #034CCA;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: white;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border:2px;
+    transition:0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform:scale3d(1.03);
+    background-color: #034CCA;
+    color:black;
+    box-shadow: 0 0 25px #034CCA;
+}
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+.typing-text span::before{
+    content: "作曲家";
+    color:#034CCA;
+    animation: words 10s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width:calc(100%+8px);
+    height: 100%;
+    border-left:3px solid black;
+    right:-8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #034CCA;
+    }
+}
+
+@keyframes words{
+    0%,20%{
+        content:"作曲家";
+    }
+    21%,40%{
+        content:"工程師";
+    }
+    41%,60%{
+        content:"剪輯師";
+    }
+    61%,80%{
+        content:"媒體經營者";
+    }81%,100%{
+        content:"鋼琴家";
+    }
+}
+
+@media(max-width: 995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-contet h3{
+        font-size:2.5rem;
+    }
+
+    .home-content h1{
+        font-size:5rem;
+    }
+
+    .home-img img{
+        width:70vw;
+        margin-top:4rem;
+    }
+}
+
+.svg {
+    margin-top: 80px;
+    margin-left: 10px;
+}
+
+.script{
+    display: block;
+    font-size: 50px;
+    margin-top: 90px;
+    padding: 10px;
+    border: 2px solid #034CCA;
+    background: #921AFF;
+}
+
+.myworks h1{
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.melancholy{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    color:palevioletred;
+    margin: 0;
+    margin-top: 10rem;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+h1.melancholy-title,
+.melancholy h1{
+    font-size: 8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: aqua;
+    word-break: break-word;
+}
+
+/* RWD for melancholy section */
+@media(max-width: 1024px){
+    .melancholy{
+        min-height: auto;
+        padding: 3rem 2rem;
+    }
+    
+    .melancholy h1{
+        font-size: 6rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media(max-width: 768px){
+    .melancholy{
+        margin-top: 5rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .melancholy h1{
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .video-frame{
+        max-width: 95%;
+        padding: 1rem;
+    }
+}
+
+@media(max-width: 480px){
+    .melancholy{
+        margin-top: 4rem;
+        padding: 1.5rem 1rem;
+    }
+    
+    .melancholy h1{
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .video-frame{
+        max-width: 100%;
+        padding: 0.8rem;
+        border: 0.05rem solid #ffffff;
+    }
+}
+
+h1.melancholy-title,
+.melancholy h1{
+    font-size: 8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: aqua;
+}
+
+
+.trip{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    margin: 0;
+    gap: 2rem;
+}
+
+.trip h1{
+    font-size: 8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: aqua;
+}
+.melancholy-video{
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.video-frame{
+    border: 0.1rem solid #ffffff;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    max-width: 1100px;
+    background: black;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    padding: 1.5rem; 
+    box-sizing: border-box;
+}
+
+.trip-audio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Music Works Section */
+.music-works-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    gap: 3rem;
+    min-height: 50vh;
+    background: linear-gradient(135deg, rgba(3, 76, 202, 0.05) 0%, transparent 100%);
+}
+
+.music-btn{
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background-color: #034CCA;
+    border-radius: 4rem;
+    font-size: 1.8rem;
+    color: white;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    border: 2px solid #034CCA;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.music-btn:hover{
+    background-color: transparent;
+    color: #034CCA;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(3, 76, 202, 0.6);
+}
+
+.table-container{
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    border-radius: 1rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+#demo{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+#demo th{
+    background-color: #034CCA;
+    padding: 1.2rem;
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-bottom: 2px solid #034CCA;
+}
+
+#demo td{
+    padding: 1rem 1.2rem;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #333;
+}
+
+#demo tr:hover{
+    background-color: rgba(3, 76, 202, 0.15);
+    transition: background-color 0.3s ease;
+}
+
+@media(max-width: 768px){
+    .music-btn{
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
+    }
+   
+    #demo th,
+    #demo td{
+        padding: 0.8rem;
+        font-size: 1.2rem;
+    }
+    
+    .music-works-section{
+        padding: 2rem 1rem;
+    }
+    
+    .trip h1{
+        font-size: 4rem;
+    }
+    
+    .trip-audio{
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .trip-audio audio{
+        height: 40px;
+    }
+}
+
+@media(max-width: 480px){
+    .trip h1{
+        font-size: 2.5rem;
+    }
+    
+    .trip-audio{
+        max-width: 100%;
+        padding: 1rem;
+        border: 1px solid #034CCA;
+    }
+    
+    .trip-audio audio{
+        height: 35px;
+    }
+}
+
+.trip-audio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(3, 76, 202, 0.1) 0%, rgba(146, 26, 255, 0.1) 100%);
+    border: 2px solid #034CCA;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 24px rgba(3, 76, 202, 0.2);
+}
+
+.trip-audio audio{
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    border-radius: 1rem;
+    background-color: #1a1a1a;
+    accent-color: #034CCA;
+}
+
+.myself{
+    font-size:40px;
+    color:white
+}
+
+.polygon{
+    /* 將 SVG 容器置中（在欄位內置中）*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+/* SVG 本體：限制寬度並讓多邊形置中 */
+.polygon svg{
+    width: 320px;
+    max-width: 80vw;
+    height: auto;
+    display: block;
+}
+
+/* 旋轉動畫：需要 transform-box 以讓 transform-origin 生效 */
+.polygon polygon{
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin{
+    to { transform: rotate(360deg); }
+}
+
+/* 可選：若想把多邊形固定在視窗中央（覆蓋頁面），啟用下面這個類別 .polygon--fixed
+   使用方法：在 HTML 的 svg 容器上加上 class="polygon polygon--fixed" */
+.polygon--fixed{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 500;
+    pointer-events: none; /* 不阻擋下方互動 */
+}
+
+/* 斷點微調 */
+@media(max-width: 480px){
+    .polygon svg{ width: 220px; }
+}
+/* MyCard Section */
+.mycard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    margin: 0;
+    gap: 2rem;
+}
+
+.mycard-container h1{
+    font-size: 8rem;
+    text-align: center;
+    color: aqua;
+    margin-bottom: 2rem;
+}
+
+.card-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.mycard{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 2px solid #034CCA;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(3, 76, 202, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mycard:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(3, 76, 202, 0.5);
+    border-color: #921AFF;
+}
+
+.card-header{
+    border-bottom: 2px solid #034CCA;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-header h2{
+    font-size: 2.2rem;
+    color: #034CCA;
+    margin: 0;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.card-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 1.4rem;
+    color: white;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(3, 76, 202, 0.3);
+}
+
+.card-label{
+    font-weight: 600;
+    color: #034CCA;
+    min-width: 100px;
+}
+
+.card-value{
+    color: white;
+    word-break: break-word;
+    text-align: right;
+    flex: 1;
+    padding-left: 1rem;
+}
+
+/* RWD for mycard */
+@media(max-width: 1024px){
+    .card-wrapper{
+        grid-template-columns: 1fr;
+    }
+    
+    .mycard-container h1{
+        font-size: 6rem;
+    }
+}
+
+@media(max-width: 768px){
+    .mycard-container{
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+    
+    .mycard-container h1{
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .mycard{
+        padding: 1.5rem;
+    }
+    
+    .card-header h2{
+        font-size: 1.8rem;
+    }
+    
+    .card-item{
+        flex-direction: column;
+        font-size: 1.2rem;
+        gap: 0.5rem;
+    }
+    
+    .card-label{
+        min-width: auto;
+        margin-bottom: 0.3rem;
+    }
+    
+    .card-value{
+        text-align: left;
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 480px){
+    .mycard-container h1{
+        font-size: 2.5rem;
+    }
+    
+    .mycard{
+        padding: 1rem;
+        border: 1px solid #034CCA;
+    }
+    
+    .card-header h2{
+        font-size: 1.4rem;
+    }
+    
+    .card-item{
+        font-size: 1rem;
+        padding: 0.6rem 0;
+    }
+}
+
+/* Listen button for SoundCloud */
+.listen-wrap{
+    text-align: center;
+    margin: 3rem 0 6rem;
+}
+
+.listen-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #ff7a00 0%, #ff5500 100%); /* SoundCloud orange */
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 4rem;
+    border: 2px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 24px rgba(255,85,0,0.18);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.listen-btn i{ font-size: 2.2rem; line-height:1; }
+
+.listen-btn:hover,
+.listen-btn:focus{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(255,85,0,0.28);
+    opacity: 0.98;
+}
+
+.listen-btn:active{
+    transform: translateY(-2px) scale(0.995);
+}
+
+@media (max-width: 768px){
+    .listen-btn{ font-size: 1.6rem; padding: 0.9rem 1.6rem; }
+    .listen-btn i{ font-size: 1.8rem; }
+}
+
+@media (max-width: 480px){
+    .listen-wrap{ margin: 2rem 0; }
+    .listen-btn{ font-size: 1.4rem; padding: 0.7rem 1.2rem; gap:0.6rem; }
+    .listen-btn i{ font-size: 1.4rem; }
+}
+
+/* Service / Contact form styles */
+.service-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    min-height: 60vh;
+}
+
+.service-section h1{
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.form-wrapper{
+    width: 100%;
+    max-width: 900px;
+    margin-top: 1.5rem;
+}
+
+.contact-form{
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.contact-form .form-row{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.contact-form .form-row.two-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.contact-form label{
+    font-size: 1.4rem;
+    color: #cfe0ff;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form textarea{
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    font-size: 1.6rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+    color: white;
+}
+
+.contact-form textarea{ resize: vertical; min-height: 120px; }
+
+.contact-form input:focus, .contact-form textarea:focus{
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(3,76,202,0.12);
+    border-color: #034CCA;
+}
+
+.form-actions{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border: none;
+}
+
+.submit-btn{
+    background: linear-gradient(90deg,#034CCA,#0066FF);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(3,76,202,0.3);
+}
+
+.secondary-btn{
+    background: transparent;
+    color: #cfe0ff;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+@media (max-width: 768px){
+    .contact-form .form-row.two-col{ grid-template-columns: 1fr; }
+    .form-actions{ justify-content: center; }
+}
+
+
+.piano,.make-video,.maimai{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    margin: 0;
+    gap: 2rem;
+}
+
+.piano h1,.make-video h1,.maimai h1{
+    font-size:8rem;
+    align-items: center;
+
+}
+
+.piano p,.make-video p,.maimai p{
+    font-size: 1.8rem;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+}
+
+.make-video-video,.maimai-play{
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.video-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.link-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, #034CCA 0%, #0087FF 100%);
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 4rem;
+    border: 2px solid #034CCA;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(3, 76, 202, 0.4);
+}
+
+.link-btn:hover{
+    background: linear-gradient(135deg, #0087FF 0%, #034CCA 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(3, 76, 202, 0.6);
+    border-color: #921AFF;
+    color: #fff;
+}
+
+.link-btn:active{
+    transform: translateY(-1px);
+}
+
+.link-btn i{
+    font-size: 1.6rem;
+}
+
+@media(max-width: 1024px){
+    .make-video-video,.maimai-play{
+        max-width: 700px;
+    }
+}
+
+@media(max-width: 768px){
+    .make-video p{
+        font-size: 1.4rem;
+    }
+    
+    .make-video-video,.maimai-play{
+        max-width: 95%;
+    }
+    
+    .link-btn{
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media(max-width: 480px){
+    .make-video p{
+        font-size: 1.2rem;
+    }
+    
+    .link-btn{
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+        gap: 0.5rem;
+    }
+}
+
